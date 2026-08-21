@@ -16,10 +16,10 @@ jobs:
           echo "${{ secrets.RCLONE_CONFIG }}" > ~/.config/rclone/rclone.conf
 
       - name: Listar carpetas en Google Drive (prueba de conexión)
-        run: rclone lsd gdrive:
+        run: rclone lsd "gdrive:"
 
       - name: Crear carpeta de prueba en Drive
-        run: rclone mkdir gdrive:veconos-test
+        run: rclone mkdir "gdrive:veconos-test"
 
       - name: Confirmar que la carpeta se creó
-        run: rclone lsd gdrive:
+        run: rclone lsd "gdrive:"
